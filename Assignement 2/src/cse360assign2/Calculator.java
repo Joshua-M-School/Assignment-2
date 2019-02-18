@@ -3,11 +3,13 @@ package cse360assign2;
 public class Calculator {
 
 	private int total; //this value will be added, subtracted, multiplied, and divided from
+	private String history; //this value stores the calculator's history
 	/**
 	 * Constructor for Calculator class, does not need any parameters
 	 */
 	public Calculator () {
 		total = 0;  // not needed - included for clarity
+		history = "0";
 	}
 	
 	/**
@@ -24,6 +26,7 @@ public class Calculator {
 	 */
 	public void add (int value) {
 		total = total + value;
+		history = history + " + " + value;
 	}
 	
 	/**
@@ -32,6 +35,7 @@ public class Calculator {
 	 */
 	public void subtract (int value) {
 		total = total - value;
+		history = history + " - " + value;
 	}
 	
 	/**
@@ -40,6 +44,7 @@ public class Calculator {
 	 */
 	public void multiply (int value) {
 		total = total * value;
+		history = history + " * " + value;
 	}
 	
 	/**
@@ -52,6 +57,7 @@ public class Calculator {
 		}else {
 			total = total / value;
 		}
+		history = history + " / " + value;
 	}
 	/**
 	 * Returns the history of all methods used on the total <br>
@@ -66,6 +72,6 @@ public class Calculator {
 	 * @return history
 	 */
 	public String getHistory () {
-		return "";
+		return history;
 	}
 }
